@@ -10,7 +10,6 @@ activityCompose = "1.8.0"
 composeBom = "2024.05.00"
 ksp = "1.9.23-1.0.20"
 androidxAppCompat = "1.6.1"
-androidxComposeCompiler = "1.5.1"
 firebaseBom = "33.0.0"
 firebaseCrashlyticsPlugin = "3.0.0"
 hilt = "2.51.1"
@@ -18,6 +17,33 @@ androidxTracing = "1.3.0-alpha02"
 room = "2.6.1"
 androidxHiltNavigationCompose = "1.2.0"
 androidxLifecycle = "2.7.0"
+googleOss = "17.0.1"
+googleOssPlugin = "0.10.6"
+androidDesugarJdkLibs = "2.0.4"
+gmsPlugin = "4.4.1"
+firebasePerfPlugin = "1.4.2"
+
+# new
+## Compose
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+androidxComposeBom = "2024.03.00"
+# https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+androidxComposeCompiler = "1.5.11"
+# https://developer.android.com/jetpack/androidx/releases/navigation
+androidxComposeNavigation = "2.7.7"
+# https://developer.android.com/jetpack/androidx/releases/compose-material3
+androidxComposeMaterial3 = "1.2.1"
+
+## Test
+# # https://developer.android.com/jetpack/androidx/releases/test
+androidxTestExt = "1.1.5"
+androidxEspresso = "3.5.1"
+
+## Coroutine
+# https://github.com/cashapp/turbine
+turbine = "1.1.0"
+# https://github.com/Kotlin/kotlinx.coroutines
+coroutine = "1.8.0"
 
 [libraries]
 # Dependencies of the included build-logic
@@ -26,6 +52,7 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 firebase-crashlytics-gradle-plugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
 room-gradle-plugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+firebase-performance-gradle-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
 
 # etc
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
@@ -35,9 +62,6 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -51,7 +75,7 @@ firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashly
 firebase-performance = { group = "com.google.firebase", name = "firebase-perf-ktx" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 androidx-tracing-ktx = { group = "androidx.tracing", name = "tracing-ktx", version.ref = "androidxTracing" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
@@ -60,10 +84,44 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-lifecycle-runtime-testing = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewModel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
+google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
+google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
+android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+
+
+# new
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidxComposeMaterial3" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
+androidx-compose-navigation-test = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxComposeNavigation" }
+
+androidx-test-ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExt" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
+
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
 room = { id = "androidx.room", version.ref = "room" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
+
+# defined plugins for this project
+architect-android-application = { id = "architect.android.application", version = "unspecified" }
+architect-android-compose = { id = "architect.android.compose", version = "unspecified" }
+architect-android-feature = { id = "architect.android.feature", version = "unspecified" }
+architect-android-library = { id = "architect.android.library", version = "unspecified" }
+architect-android-firebase = { id = "architect.android.firebase", version = "unspecified" }
+architect-android-room = { id = "architect.android.room", version = "unspecified" }

@@ -1,4 +1,4 @@
-package compose.architect.practie
+package compose.architect.practice
 
 /**
  * This is shared between :app module to provide configurations type safety.

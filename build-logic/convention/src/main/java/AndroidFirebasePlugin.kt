@@ -1,16 +1,17 @@
-import com.android.build.api.dsl.ApplicationExtension
 import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
-import compose.architect.practie.libs
+import compose.architect.practice.androidExtension
+import compose.architect.practice.implementation
+import compose.architect.practice.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
-class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
+class AndroidFirebasePlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
+            pluginManager.apply {
                 apply("com.google.gms.google-services")
                 apply("com.google.firebase.firebase-perf")
                 apply("com.google.firebase.crashlytics")
@@ -18,13 +19,13 @@ class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
 
             dependencies {
                 val bom = libs.findLibrary("firebase-bom").get()
-                add("implementation", platform(bom))
-                "implementation"(libs.findLibrary("firebase.analytics").get())
-                "implementation"(libs.findLibrary("firebase.performance").get())
-                "implementation"(libs.findLibrary("firebase.crashlytics").get())
+                implementation(platform(bom))
+                implementation(libs.findLibrary("firebase.analytics").get())
+                implementation(libs.findLibrary("firebase.performance").get())
+                implementation(libs.findLibrary("firebase.crashlytics").get())
             }
 
-            extensions.configure<ApplicationExtension> {
+            androidExtension.apply {
                 buildTypes.configureEach {
                     // Disable the Crashlytics mapping file upload. This feature should only be
                     // enabled if a Firebase backend is available and configured in

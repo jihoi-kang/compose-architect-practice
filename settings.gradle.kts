@@ -6,6 +6,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -15,7 +17,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "compose-architect-practice"
-
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+
+// core
 include(":core:common")
