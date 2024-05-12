@@ -1,6 +1,6 @@
 [versions]
 agp = "8.4.0"
-kotlin = "1.9.0"
+kotlin = "1.9.23"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -44,6 +44,8 @@ androidxEspresso = "3.5.1"
 turbine = "1.1.0"
 # https://github.com/Kotlin/kotlinx.coroutines
 coroutine = "1.8.0"
+material = "1.12.0"
+navigationRuntimeKtx = "2.7.7"
 
 [libraries]
 # Dependencies of the included build-logic
@@ -106,6 +108,9 @@ androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espres
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine" }
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutine" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

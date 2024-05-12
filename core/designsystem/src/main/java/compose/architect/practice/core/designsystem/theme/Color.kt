@@ -1,4 +1,4 @@
-package compose.architect.practice.ui.theme
+package compose.architect.practice.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

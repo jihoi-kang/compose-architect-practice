@@ -20,4 +20,16 @@ rootProject.name = "compose-architect-practice"
 include(":app")
 
 // core
-include(":core:common")
+include(
+    ":core:common",
+    ":core:analytics",
+    ":core:domain",
+    ":core:designsystem",
+    ":core:ui",
+)
+
+// feature
+include(
+    ":feature:home",
+    ":feature:setting",
+)
